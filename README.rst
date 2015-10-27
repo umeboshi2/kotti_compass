@@ -1,7 +1,22 @@
 kotti_compass
 *************
 
-This is an extension to Kotti that allows to add foo to your site.
+This is an extension to Kotti that allows to add custom
+stylesheets to your site.  This project uses compass_ to
+help build the stylesheets and places them in a python package
+subdirectory where these assets can be served through pyramid or
+fanstatic.
+
+This project includes scss versions of:
+  - bootstrap
+  - jquery-ui
+  - font-awesome
+
+This project is meant to be cloned so you can make stylesheets more
+easily for any python project where an http server can serve static
+assets from a python package.
+
+
 
 |build status|_
 
@@ -21,20 +36,14 @@ To enable the extension in your Kotti site, activate the configurator::
     kotti.configurators =
         kotti_compass.kotti_configure
 
-Database upgrade
-================
-
-If you are upgrading from a previous version you might have to migrate your
-database.  The migration is performed with `alembic`_ and Kotti's console script
-``kotti-migrate``. To migrate, run
-``kotti-migrate upgrade --scripts=kotti_compass:alembic``.
-
-For integration of alembic in your environment please refer to the
-`alembic documentation`_. If you have problems with the upgrade,
-please create a new issue in the `tracker`_.
-
 Development
 ===========
+
+- todo: describe this
+
+  - bundle install
+
+  - compass compile
 
 Contributions to kotti_compass are highly welcome.
 Just clone its `Github repository`_ and submit your contributions as pull requests.
