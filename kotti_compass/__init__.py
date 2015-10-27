@@ -25,9 +25,7 @@ def kotti_configure(settings):
 
     settings['pyramid.includes'] += ' kotti_compass'
     settings['kotti.alembic_dirs'] += ' kotti_compass:alembic'
-    settings['kotti.available_types'] += ' kotti_compass.resources.CustomContent'
     settings['kotti.fanstatic.view_needed'] += ' kotti_compass.fanstatic.css_and_js'
-    File.type_info.addable_to.append('CustomContent')
 
 
 def includeme(config):
