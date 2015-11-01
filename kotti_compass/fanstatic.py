@@ -13,21 +13,33 @@ from fanstatic import Resource
 
 library = Library("kotti_compass", "static")
 
+font_awesome = Resource(
+    library,
+    'font-awesome.css')
+
 BASECOLORS = ['bisque', 'BlanchedAlmond',
               'DarkSeaGreen', 'LavenderBlush']
 
 STYLES = ['bootstrap-custom', 'jqueryui', 'screen']
 
 mystyles = dict()
-for style in STYLES:
-    mystyles[style] = dict()
-    for basecolor in BASECOLORS:
-        filename = '%s-%s.css' % (style, basecolor)
-        mystyles[style][basecolor] = Resource(library, filename)
+#for style in STYLES:
+#    mystyles[style] = dict()
+#    for basecolor in BASECOLORS:
+#        filename = '%s-%s.css' % (style, basecolor)
+#        mystyles[style][basecolor] = Resource(library, filename)
 
-font_awesome = Resource(
-    library,
-    'font-awesome.css')
+mystyles['jqueryui'] = dict()
+mystyles['bootstrap-custom'] = dict()
+for basecolor in BASECOLORS:
+    jqf = 'jqueryui-%s.css' % basecolor
+    jq = Resource(library, jqf, depends=[font_awesome])
+    mystyles['jqueryui'][basecolor] = jq
+
+    bcf = 'bootstrap-custom-%s.css' % basecolor
+    bc = Resource(library, bcf, depends=[jq])
+    mystyles['bootstrap-custom'][basecolor] = bc
+
 
 
 css = Resource(
