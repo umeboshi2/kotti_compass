@@ -15,5 +15,4 @@ def custom_settings():
     import kotti_compass.resources
     kotti_compass.resources  # make pyflakes happy
     return {
-        'kotti.configurators': 'kotti_tinymce.kotti_configure '
-                               'kotti_compass.kotti_configure'}
+        'kotti.configurators': 'kotti_compass.kotti_configure'}
