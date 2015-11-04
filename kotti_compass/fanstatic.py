@@ -18,7 +18,7 @@ font_awesome = Resource(
     'font-awesome.css')
 
 BASECOLORS = ['bisque', 'BlanchedAlmond',
-              'DarkSeaGreen', 'LavenderBlush']
+              'DarkSeaGreen', 'LavenderBlush', 'cornsilk']
 
 STYLES = ['bootstrap-custom', 'jqueryui', 'screen']
 
